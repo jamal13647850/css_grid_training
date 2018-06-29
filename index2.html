@@ -5,13 +5,12 @@
     <title>Title</title>
     <style>
         body{
-            display: grid;
             justify-content: center;
             margin-top: 50px;
         }
         .grid-container3{
             display: grid;
-            grid-template-columns: repeat(1,200px);
+            grid-template-columns: repeat(1,auto);
             grid-template-areas:
                     "header"
                     "sidebar"
@@ -26,7 +25,7 @@
             background-color: dimgray;
             color: white;
             border-radius: 3px;
-            padding: 40px;
+            padding: 20px;
             font-size: 1.5em;
         }
         .header{
@@ -35,11 +34,17 @@
         .sidebar{
             grid-area: sidebar;
         }
-        .sidebar2{
-            grid-area: sidebar2;
-        }
+
         .content{
             grid-area: content;
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 10px;
+        }
+        .content .course{
+            height: 200px;
+            background: yellow;
+            color: black;
         }
         .footer{
             grid-area: footer;
@@ -50,10 +55,15 @@
                 grid-template-areas:
                         "header header"
                         "sidebar content"
-                        "sidebar2 sidebar2"
                         "footer footer"
 
             ;
+            }
+            .content{
+                grid-template-columns: auto auto;
+            }
+            .box-1{
+                grid-column: 1/span 2;
             }
         }
         @media only screen and (min-width: 900px) {
@@ -67,6 +77,9 @@
 
             ;
             }
+            .content{
+                grid-template-columns: repeat(4,auto);
+            }
         }
     </style>
 </head>
@@ -74,8 +87,15 @@
     <div class="grid-container3">
         <div class="box header">HEADER</div>
         <div class="box sidebar">SIDEBAR</div>
-        <div class="box content">CONTENT</div>
-        <div class="box sidebar2">SIDEBAR 2</div>
+        <div class="box content">
+            <div class="course box-1">BOX 1</div>
+            <div class="course box-2">BOX 2</div>
+            <div class="course box-3">BOX 3</div>
+            <div class="course box-4">BOX 4</div>
+            <div class="course box-5">BOX 5</div>
+            <div class="course box-6">BOX 6</div>
+
+        </div>
         <div class="box footer">FOOTER</div>
     </div>
 </body>
