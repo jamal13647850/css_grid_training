@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Grid</title>
+    <style>
+      body {
+        display: grid;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: [col1-start] 150px [col2-start] 150px [col3-start] 150px [col3-end];
+        grid-template-rows: 200px 300px;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+      }
+
+      .grid-item {
+        background-color: dimgray;
+        color: white;
+        border-radius: 3px;
+        padding: 40px;
+        font-size: 2em;
+      }
+
+      .item-a {
+        grid-column: col1-start/col3-end;
+        grid-row: 1/2;
+      }
+
+      .item-c {
+        grid-column: 2 / span 2;
+
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+
+      .item-d {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 2 / span 3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <div class="grid-item item-a">A</div>
+      <div class="grid-item">B</div>
+      <div class="grid-item item-c">C</div>
+      <div class="grid-item item-d">D</div>
+      <div class="grid-item">E</div>
+      <div class="grid-item">F</div>
+    </div>
+
+    <a href="./index.html">index</a>
+  </body>
+</html>

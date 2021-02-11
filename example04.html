@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      body {
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .grid-container3 {
+        display: grid;
+        //grid-template-columns: repeat(1,auto);
+        //grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "content"
+          "sidebar2"
+          "footer";
+        grid-gap: 10px;
+        margin-top: 50px;
+      }
+
+      .box {
+        background-color: dimgray;
+        color: white;
+        border-radius: 3px;
+        padding: 20px;
+        font-size: 1.5em;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+      }
+
+      .content {
+        grid-area: content;
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+      }
+
+      .content .course {
+        height: 200px;
+        background: yellow;
+        color: black;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+
+      @media only screen and (min-width: 500px) {
+        .grid-container3 {
+          grid-template-columns: 20% auto;
+          grid-template-areas:
+            "header header"
+            "sidebar content"
+            "footer footer";
+        }
+
+        .content {
+          grid-template-columns: auto auto;
+        }
+
+        .box-1 {
+          grid-column: 1 / span 2;
+        }
+      }
+
+      @media only screen and (min-width: 900px) {
+        .grid-container3 {
+          grid-template-columns: 150px auto 150px;
+          grid-gap: 20px;
+          grid-template-areas:
+            "header header header"
+            "sidebar content sidebar2"
+            "footer footer footer";
+        }
+
+        .content {
+          grid-template-columns: repeat(4, auto);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="grid-container3">
+      <div class="box header">HEADER</div>
+      <div class="box sidebar">SIDEBAR</div>
+      <div class="box content">
+        <div class="course box-1">BOX 1</div>
+        <div class="course box-2">BOX 2</div>
+        <div class="course box-3">BOX 3</div>
+        <div class="course box-4">BOX 4</div>
+        <div class="course box-5">BOX 5</div>
+        <div class="course box-6">BOX 6</div>
+      </div>
+      <div class="box footer">FOOTER</div>
+    </div>
+    <a href="./index.html">index</a>
+  </body>
+</html>
