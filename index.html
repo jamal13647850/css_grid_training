@@ -1,144 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>CSS Grid</title>
-    <STYLE>
-        body{
-            display: grid;
-            justify-content: center;
-            margin-top: 50px;
-        }
-        .grid-container{
-            display: grid;
-            grid-template-columns: [col1-start] 150px [col2-start] 150px [col3-start] 150px [col3-end];
-            grid-template-rows: 200px 300px;
-            grid-column-gap: 10px;
-            grid-row-gap: 10px;
-        }
-        .grid-item{
-            background-color: dimgray;
-            color: white;
-            border-radius: 3px;
-            padding: 40px;
-            font-size: 2em;
-        }
-        .item-a{
-            grid-column: col1-start/col3-end;
-            grid-row: 1/2;
+	<meta charset="UTF-8">
+	<title>CSS Grid</title>
+	<STYLE>
+		body {
+			display: grid;
+			justify-content: center;
+			margin-top: 50px;
+		}
 
-        }
-        .item-c{
-            grid-column: 2/span 2;
+		.grid-container {
+			display: grid;
+			grid-template-columns: [col1-start] 150px [col2-start] 150px [col3-start] 150px [col3-end];
+			grid-template-rows: 200px 300px;
+			grid-column-gap: 10px;
+			grid-row-gap: 10px;
+		}
 
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        .item-d{
-            grid-column-start: 1;
-            grid-column-end: 2;
-            grid-row: 2/span 3;
+		.grid-item {
+			background-color: dimgray;
+			color: white;
+			border-radius: 3px;
+			padding: 40px;
+			font-size: 2em;
+		}
 
-        }
+		.item-a {
+			grid-column: col1-start/col3-end;
+			grid-row: 1/2;
 
+		}
 
+		.item-c {
+			grid-column: 2/span 2;
 
-        .grid-container2{
-            display: grid;
-            grid-template-columns: repeat(3,150px);
-            grid-template-rows:  repeat(3,150px);
-            grid-column-gap: 10px;
-            grid-row-gap: 10px;
-            margin-top: 50px;
-        }
-        .grid-item2{
-            background-color: dimgray;
-            color: white;
-            border-radius: 3px;
-            padding: 40px;
-            font-size: 2em;
-        }
-        .item-g{
-            grid-column: 1/4;
-            grid-row: 1/2;
-        }
-        .item-h{
-            grid-column: 1/2;
-            grid-row: 2/4;
-        }
-        .item-i{
+			grid-row-start: 2;
+			grid-row-end: 3;
+		}
 
-        }
-        .item-j{
+		.item-d {
+			grid-column-start: 1;
+			grid-column-end: 2;
+			grid-row: 2/span 3;
 
-        }
-        .item-k{
-
-        }
-        .item-l{
-
-        }
+		}
 
 
-        .grid-container3{
-            display: grid;
-            grid-template-columns: repeat(3,150px);
-            grid-template-areas:
-                "header header header"
-                "sidebar content content"
-                "footer footer footer"
-        ;
-            grid-gap: 10px;
-            margin-top: 50px;
-        }
-        .box{
-            background-color: dimgray;
-            color: white;
-            border-radius: 3px;
-            padding: 40px;
-            font-size: 1.5em;
-        }
-        .header{
-            grid-area: header;
-        }
-        .sidebar{
-            grid-area: sidebar;
-        }
-        .content{
-            grid-area: content;
-        }
-        .footer{
-            grid-area: footer;
-        }
-    </STYLE>
+
+		.grid-container2 {
+			display: grid;
+			grid-template-columns: repeat(3, 150px);
+			grid-template-rows: repeat(3, 150px);
+			grid-column-gap: 10px;
+			grid-row-gap: 10px;
+			margin-top: 50px;
+		}
+
+		.grid-item2 {
+			background-color: dimgray;
+			color: white;
+			border-radius: 3px;
+			padding: 40px;
+			font-size: 2em;
+		}
+
+		.item-g {
+			grid-column: 1/4;
+			grid-row: 1/2;
+		}
+
+		.item-h {
+			grid-column: 1/2;
+			grid-row: 2/4;
+		}
+
+		.item-i {}
+
+		.item-j {}
+
+		.item-k {}
+
+		.item-l {}
+
+
+		.grid-container3 {
+			display: grid;
+			grid-template-columns: repeat(3, 150px);
+			grid-template-areas:
+				"header header header"
+				"sidebar content content"
+				"footer footer footer"
+			;
+			grid-gap: 10px;
+			margin-top: 50px;
+		}
+
+		.box {
+			background-color: dimgray;
+			color: white;
+			border-radius: 3px;
+			padding: 40px;
+			font-size: 1.5em;
+		}
+
+		.header {
+			grid-area: header;
+		}
+
+		.sidebar {
+			grid-area: sidebar;
+		}
+
+		.content {
+			grid-area: content;
+		}
+
+		.footer {
+			grid-area: footer;
+		}
+	</STYLE>
 </head>
+
 <body>
-    <div class="grid-container">
-        <div class="grid-item item-a">A</div>
-        <div class="grid-item">B</div>
-        <div class="grid-item item-c">C</div>
-        <div class="grid-item item-d">D</div>
-        <div class="grid-item">E</div>
-        <div class="grid-item">F</div>
-    </div>
+	<div class="grid-container">
+		<div class="grid-item item-a">A</div>
+		<div class="grid-item">B</div>
+		<div class="grid-item item-c">C</div>
+		<div class="grid-item item-d">D</div>
+		<div class="grid-item">E</div>
+		<div class="grid-item">F</div>
+	</div>
 
 
 
-    <div class="grid-container2">
-        <div class="grid-item2 item-g">G</div>
-        <div class="grid-item2 item-h">H</div>
-        <div class="grid-item2 item-i">I</div>
-        <div class="grid-item2 item-j">J</div>
-        <div class="grid-item2 item-k">K</div>
-        <div class="grid-item2 item-l">L</div>
-    </div>
+	<div class="grid-container2">
+		<div class="grid-item2 item-g">G</div>
+		<div class="grid-item2 item-h">H</div>
+		<div class="grid-item2 item-i">I</div>
+		<div class="grid-item2 item-j">J</div>
+		<div class="grid-item2 item-k">K</div>
+		<div class="grid-item2 item-l">L</div>
+	</div>
 
 
-    <div class="grid-container3">
-        <div class="box header">HEADER</div>
-        <div class="box sidebar">SIDEBAR</div>
-        <div class="box content">CONTENT</div>
-        <div class="box footer">FOOTER</div>
-    </div>
+	<div class="grid-container3">
+		<div class="box header">HEADER</div>
+		<div class="box sidebar">SIDEBAR</div>
+		<div class="box content">CONTENT</div>
+		<div class="box footer">FOOTER</div>
+	</div>
+	<a href="./index.html">index1</a>
+	<a href="./index2.html">index2</a>
+	<a href="./index3.html">index3</a>
 </body>
+
 </html>
